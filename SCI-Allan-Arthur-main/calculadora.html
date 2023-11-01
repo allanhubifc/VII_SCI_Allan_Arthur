@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="estilo.css" />
+        <script defer src="script.js"></script>
+        <title>Armazamento</title>
+        <script type="text/javascript" src="script.js"></script>
+    </head>
+
+    <body class="body">
+        <div>
+            <a href="VII-SCI.html" target="_blank"><input type="button" value="voltar para o inicio"></button></a>
+          </div>
+        <h1>Calculadora de Orçamento para o evento SCI</h1>
+
+        <h2>Dados do evento</h2>
+
+        <h3>Inscritos:</h3>
+        <input type="number" id="numero_participantes" readonly class="col-4"><br>
+        <button onclick="localStorage.removeItem('total_inscritos');">Remover do Armazamento</button>
+
+        <div>
+            <h2>Custos de Produtos Alimenticios</h2>
+            <table>
+                <tr>
+                    <th>Produtos</th>
+                    <th>Quantidade por Participante</th>
+                    <th>Preço por Unidade</th>
+                    <th>Total</th>
+                </tr>
+                <tr>
+                    <td class="pdr">Café</td>
+                    <td class="col-3"><input type="text" id="n1" readonly></td>
+                    <td><input type="number" id="n2" placeholder="R$"></td>
+                    <td><input type="text" readonly id="resultado1" /></td>
+                </tr>
+                <tr>
+                    <td class="pdr">Bolo</td>
+                    <td><input type="number" id="n3" readonly></td>
+                    <td><input type="number" id="n4" placeholder="R$"></td>
+                    <td><input type="text" readonly id="resultado2" />
+                </tr>
+                <tr>
+                    <td class="pdr">Cachorro Quente</td>
+                    <td><input type="number" id="n5" readonly></td>
+                    <td><input type="number" id="n6" placeholder="R$"></td>
+                    <td><input type="text" readonly id="resultado3" /></td>
+                </tr>
+            </table>
+        </div>
+
+        <div>
+            <h2>Custos de Itens e Divulgação</h2>
+            <table>
+                <tr>
+                    <th>Item</th>
+                    <th>Quantidade por Participante</th>
+                    <th>Preço por Unidade</th>
+                    <th>Total</th>
+                </tr>
+                <tr>
+                    <td class="pdr">Banner</td>
+                    <td class="col-3"><input type="number" id="n7" readonly></td>
+                    <td><input type="number" id="n8" placeholder="R$"></td>
+                    <td><input type="text" readonly id="resultado4" /></td>
+                </tr>
+                <tr>
+                    <td class="pdr">Crachá</td>
+                    <td><input type="number" id="n9" readonly></td>
+                    <td><input type="number" id="n10" placeholder="R$"></td>
+                    <td><input type="text" readonly id="resultado5" />
+                </tr>
+                </tr>
+                <tr>
+                    <td class="pdr">Camiseta</td>
+                    <td><input type="number" id="n11" readonly></td>
+                    <td><input type="number" id="n12" placeholder="R$" onblur="multiplicar(), somar(), moedas()" ></td>
+                    <td><input type="text" readonly id="resultado6" /></td>
+                </tr>
+            </table>
+        </div>
+        
+        <div>
+            <h2>Custos Totais</h2>
+            <table>
+                <tr>
+                    <th>Tipo</th>
+                    <th>Total</th>
+                    <th>Dolar</th>
+                    <th>Euro</th>
+                </tr>
+                <tr>
+                    <td>Produtos Alimenticios</td>
+                    <td class="col-3"><input type="text" readonly id="totalalimentos" /></td>
+                    <td><input type="text" readonly id="dolar1"></td>
+                    <td><input type="text" readonly id="euro1"></td>
+                </tr>
+                <tr>
+                    <td>Divulgação</td>
+                    <td><input type="text" readonly id="totaldivul" /></td>
+                    <td><input type="text" readonly id="dolar2"></td>
+                    <td><input type="text" readonly id="euro2"></td>
+                </tr>
+                <tr>
+                    <td>Total</td>
+                    <td><input type="text" readonly id="somatotal" /></td>
+                    <td><input type="text" readonly id="dolar3"></td>
+                    <td><input type="text" readonly id="euro3"></td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <form action="https://api.headlessforms.cloud/api/v1/form/TmqQ0ch59B" id="calcForm" method="POST">
+                <input  type="button" value="Montar texto" onclick="montartexto()">
+                <textarea name="texto" id="texto" rows="10" cols="50" readonly></textarea>
+                <input  type="submit" value="Enviar">
+            </form>
+        </div>
+        
+        <footer>
+            <div class="footer">
+              <p>© Arthur Gaio e Allan F. Fantin 2023</p>
+            </div>
+          </footer>
+    </body>
+</html>
